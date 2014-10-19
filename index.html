@@ -28,35 +28,82 @@
 <body class="list">
 	<header class="caption">
 		<h1>Highway to Continuous Integration</h1>
-		<p><a href="">Denis Trifonov</a>, <a href="">2GIS</a></p>
+		<p><a href="https://dentrifonov.github.io">Denis Trifonov</a>, <a href="http://2gis.ru">2GIS</a></p>
 	</header>
 	<section class="slide"><div>
 		<h2>Highway to Continuous Integration</h2>
-		<p><a href="">Denis Trifonov</a>, <a href="">2GIS</a></p>
+		<h3>Denis Trifonov, 2GIS</h3>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Обо мне</h2>
+		<p>Специалист по тестированию ПО в 2GIS. Команды Web API и Continuous Delivery.</p>
 		<p>Занимаюсь задачами внедрения Continuous Integration и Continuous Delivery в Web API, автоматизацией для разработки, функционального и нагрузочного тестирования.</p>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Проблема</h2>
-		<p>Должен быть рабочий код.</p>
+		<h2>Цель</h2>
+		<p>Всегда должен быть рабочий код.</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Проблемы</h2>
+		<ul>
+			<li>Выпуск новой задачи с дефектами</li>
+			<li>Дефекты в продукте из-за новой задачи</li>
+			<li>Неожиданности под нагрузкой</li>
+		</ul>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>Продукт<br>не стабилен.</h2>
+	</div></section>
+	<section class="slide"><div>
+		<figure>
+			<blockquote>
+				<p>Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily - leading to multiple integrations per day. Each integration is verified by an automated build (including test) to detect integration errors as quickly as possible.</p>
+			</blockquote>
+			<figcaption>Martin Fowler</figcaption>
+		</figure>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Continuous Integration</h2>
-		<p>Описание</p>
-		<p>Все должно быть автоматизировано.</p>
+		<ul>
+			<li>Автоматизированное разворачивание</li>
+			<li>Автотесты</li>
+			<li>Быстрое выполнение</li>
+			<li>Тестирование на production-like окружении</li>
+			<li>Работоспособность мастер-ветки и системы в приоритете</li>
+		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Continuous Delivery, ссылка на доклад</h2>
+		<h2>Continuous Integration & Delivery</h2>
+		<pre>
+			<code><mark>VCS</mark> -&gt; <mark>Deploy</mark> -&gt; <mark>Tests</mark> -&gt; <mark>[ Merge ]</mark> -&gt; <mark>[ Update ]</mark>
+<mark class="comment">&lt;-------------  Continuous Integration  -------------&gt;</mark>
+
+<mark>VCS</mark> -&gt; <mark>RC</mark> -&gt; <mark class="important">CI</mark> -&gt; <mark>Staging</mark> -&gt; <mark>Performance</mark> -&gt; <mark>Release</mark>
+<mark class="comment">&lt;----------------  Continuous Delivery  -----------------&gt;</mark>
+			</code>
+		</pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Continuous Delivery или волшебная кнопка для релизов по запросу</h2>
+		<h3>Денис Яковлев, 2GIS</h3>
+		<p style="margin-top: 100px">Тезисы: <a href="http://www.highload.ru/2014/abstracts/1605.html">highload.ru/2014/abstracts/1605.html</a></p>
 	</div></section>
 	<section class="slide"><div>
 		<h2>2GIS Web API</h2>
-		<p>v. 1.3 & 2.0, Yii Framework (PHP), Chef configuring & deployment</p>
+		<ul>
+			<li>7 приложений + Core на Yii Framework (PHP)</li>
+			<li>Версии 1.3 и 2.0</li>
+			<li>Конфигурирование и разворачивание с помощью Phing и Chef</li>
+		</ul>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Автотесты</h2>
-		<p>Unit-tests, functional test on Own Framework (PHP), v. 1.3 & 2.0, Chef configuring & deployment</p>
+		<ul>
+			<li>Версии 1.3 и 2.0</li>
+			<li>Юнит-тесты</li>
+			<li>Функциональные тесты на 2GIS Framework (PHP)</li>
+			<li>Конфигурирование и разворачивание с помощью Chef</li>
+		</ul>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Рабочий код</h2>
