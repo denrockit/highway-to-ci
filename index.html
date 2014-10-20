@@ -48,7 +48,7 @@
 		<ul>
 			<li>Выпуск новой задачи с дефектами</li>
 			<li>Дефекты в продукте из-за новой задачи</li>
-			<li>Неожиданности под нагрузкой</li>
+			<li>Неожиданности под нагрузкой, на боевом окружении</li>
 		</ul>
 	</div></section>
 	<section class="slide shout"><div>
@@ -67,7 +67,7 @@
 		<ul>
 			<li>Автоматизированное разворачивание</li>
 			<li>Автотесты</li>
-			<li>Быстрое выполнение</li>
+			<li>Быстрое выполнение (до 10 минут)</li>
 			<li>Тестирование на production-like окружении</li>
 			<li>Работоспособность мастер-ветки и системы в приоритете</li>
 		</ul>
@@ -83,10 +83,15 @@
 			</code>
 		</pre>
 	</div></section>
-	<section class="slide"><div>
+	<section class="slide" id="cd"><div>
 		<h2>Continuous Delivery или волшебная кнопка для релизов по запросу</h2>
 		<h3>Денис Яковлев, 2GIS</h3>
-		<p style="margin-top: 100px">Тезисы: <a href="http://www.highload.ru/2014/abstracts/1605.html">highload.ru/2014/abstracts/1605.html</a></p>
+		<p>Тезисы: <a href="http://www.highload.ru/2014/abstracts/1605.html">highload.ru/2014/abstracts/1605.html</a></p>
+		<style>
+			#cd div p {
+				margin-top: 100px;
+			}
+		</style>
 	</div></section>
 	<section class="slide"><div>
 		<h2>2GIS Web API</h2>
@@ -107,52 +112,109 @@
 	</div></section>
 	<section class="slide"><div>
 		<h2>Рабочий код</h2>
-		<p>Без дефектов, рабочий под нагрузкой.</p>
+	</div></section>
+	<section class="slide cover" id="cat-worker"><div>
+		<img src="pictures/cat-worker.jpg">
+		<style>
+			#cat-worker img {
+				width: 100%;
+			}
+		</style>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Код без дефектов</h2>
-		<p>Выявлять как можно ранее, быстро устранять, следить за системой.</p>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Git Flow, разрабатываем все задачи и тесты в ветке, стабильный мастер</h2>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Интеграционная сборка</h2>
-		<p>Новая функциональность реализована без дефектов.</p>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Задачи</h2>
+		<h2>Рабочий код</h2>
 		<ul>
-			<li>Обновление окружения</li>
-			<li>Выполнение тестов</li>
-			<li>Слияние веток</li>
+			<li>Без дефектов</li>
+			<li class="next">Рабочий под нагрузкой</li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Готовые решения</h2>
+		<h2>Код без дефектов</h2>
+		<ol>Инструменты:
+			<li>Интеграционная сборка</li>
+			<li>Регрессионная сборка</li>
+		</ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Git Flow</h2>
+		<ul>
+			<li>Разрабатываем все задачи и тесты в ветке</li>
+			<li>Стабильная мастер-ветка</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Интеграционная сборка</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Цель</h2>
+		<p>Новая функциональность реализована без дефектов.</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Этапы</h2>
+		<ol>
+			<li>Обновление окружения</li>
+			<li>Выполнение приоритетных тестов</li>
+			<li>Слияние веток</li>
+			<li class="next">Отметка тикетов в JIRA</li>
+		</ol>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Обновление окружения</h2>
+		<pre>
+			<code>def update(issue, ...):
+  if hostname is not None and username is not None:
+    env.host_string = '%s@%s' % (username, hostname)
+    updater = WebAPICodeUpdated(issue, remote_mode=True)
+  else:
+    updater = WebAPICodeUpdated(issue, remote_mode=False)
+			</code>
+		</pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Обновление окружения</h2>
+		<pre>
+			<code>def update(issue, ...):
+  if full_mode == 'yes':
+    updater.update()
+  else:
+    updater.fast_update()
+			</code>
+		</pre>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Параллельное выполнение с помощью Paratest</h2>
+		<pre>
+			<code>$ paratest <mark>-p 8</mark> <mark class="important">-f</mark> \
+	--phpunit ./phpunit \
+	-c ./phpunit.xml \
+	./tests</code>
+		</pre>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Вливание задачи и тестов в мастер</h2>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Интеграция с Jira</h2>
+		<h2>Интеграция с JIRA</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Время сборки 1&mdash;2 минуты</h2>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Регрессионная сборка</h2>
-		<p>Нет дефектов после мержа, стабильный мастер.</p>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Задачи</h2>
+		<h2>Цели</h2>
 		<ul>
-			<li>Обновление окружения</li>
-			<li>Выполнение тестов</li>
+			<li>Нет дефектов после мержа</li>
+			<li>Стабильная мастер-ветка</li>
 		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Этапы</h2>
+		<ol>
+			<li>Обновление окружения</li>
+			<li>Выполнение всех тестов</li>
+		</ol>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Разворачивание машины в облаке</h2>
@@ -170,14 +232,39 @@
 		<h2>Обновление до свежего stable</h2>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Интеграция с Jira</h2>
+		<h2>Интеграция с JIRA</h2>
+	</div></section>
+	<section class="slide" id="defects"><div>
+		<h2>Без дефектов не бывает, поэтому устраняем на ранних этапах.</h2>
+		<!--<img src="pictures/mixing.jpg">-->
+		<!--<style>-->
+			<!--#defects div {-->
+				<!--background-color: rgba(0,0,0,0.5);-->
+			<!--}-->
+			<!--#defects h2 {-->
+				<!--color: #fff;-->
+			<!--}-->
+			<!--#defects img {-->
+				<!--height: 100%;-->
+			<!--}-->
+		<!--</style>-->
 	</div></section>
 	<section class="slide"><div>
 		<h2>Код работает под нагрузкой</h2>
-		<p>Код работает под нагрузкой, производительность не пострадала.</p>
+		<p>Инструмент: нагрузочная сборка.</p>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Задачи</h2>
+		<h2>Нагрузочная сборка</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Цели</h2>
+		<ul>
+			<li>Код работает под нагрузкой</li>
+			<li>Производительность не пострадала</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Этапы</h2>
 		<ul>
 			<li>Подготовить логи</li>
 			<li>Выполнение нагрузки</li>
@@ -186,33 +273,92 @@
 		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Готовые решения</h2>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Подготовка свежих логов для нагрузки из Elastic Search</h2>
+		<h2>Подготовка свежих логов</h2>
+		<pre>
+			<code>'rubric' => [
+  '_base' => <mark>'request:\/2.0\/catalog\/rubric\/*'</mark>,
+  'get' => [
+    '_base' => <mark>'request:\/2.0\/catalog\/rubric\/get*'</mark>,
+    'get' => [
+      'query' => <mark>'_exists_:http_get_id'</mark>,
+      'time' => 30
+    ...
+			</code>
+		</pre>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Автоматизация и параметризация запуска</h2>
+		<pre>
+			<code>[phantom]
+address={ADDRESS}:{PORT}
+rps_schedule=line(1, {RPS}, 20) const({RPS}, {TIME})
+[graphite]
+address=graphite.test
+prefix={GRAPHITE_PREFIX}
+			</code>
+		</pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Автоматизация и параметризация запуска</h2>
+		<pre>
+			<code>$nagruzhator = new DGTankist($options);
+$nagruzhator->setLoadApiKey($LOAD_API_KEY);
+$nagruzhator->setMethodsParams($methodsParams);
+$nagruzhator->run();
+			</code>
+		</pre>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Мониторинг времени ответа</h2>
+		<pre>
+			<code>$url = '/render?from=12:00_20141031&until=12:15_20141031' .
+  '&target=webapi.cumulative.quantiles.95_0&<mark>format=json</mark>';
+...
+if ($responseTime <= $expectedResponseTime) {
+  $result['status'] = 'Success';
+} else {
+  $result['status'] = 'Fail';
+}
+			</code>
+		</pre>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Построение графиков из Graphite</h2>
+		<h2>Построение графиков</h2>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Публикация и хранение отчетов в Jenkins</h2>
+		<h2>Публикация и хранение отчетов</h2>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Итого: полный путь кода</h2>
-		<ol>
-			<li>Задача в ветке, тесты OK &mdash; сливаем</li>
-			<li>Мастер без дефектов &mdash; RC, staging</li>
-			<li>Производительность не упала &mdash; production</li>
-		</ol>
+		<h2>Итого</h2>
+		<pre>
+			<code><mark>New Branch</mark> -&gt; <mark>Deploy</mark> -&gt; <mark>Tests</mark> -&gt; <mark>Merge</mark> -&gt; <mark>Mark Issue</mark>
+<mark class="comment">&lt;-----------------  Integration Build  -----------------&gt;</mark>
+
+<mark>RC</mark> -&gt; <mark>Deploy</mark> -&gt; <mark>Tests</mark> -&gt; <mark>Merge</mark> -&gt; <mark>Mark Issues</mark>
+<mark class="comment">&lt;--------------  Regression Build  --------------&gt;</mark>
+
+<mark>Staging</mark> -&gt; <mark>Load Testing</mark> -&gt; <mark>Reports</mark> -&gt; <mark class="important">Release</mark>
+<mark class="comment">&lt;-------  Load Testing Build  ------&gt;</mark>
+			</code>
+		</pre>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Выводы</h2>
+		<ul>Непрерывная интеграция нужна, если:
+			<li>Вы хотите как можно ранее выявлять проблемы</li>
+			<li>Вы хотите повысить качество и стабильность продукта</li>
+			<li>Вы хотите экономить время и избавиться от ручной работы</li>
+			<li class="next">Просто по фану, как у нас :)</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Выводы</h2>
+		<ul>Для непрерывной интеграции нужно:
+			<li>Выбрать CI-сервер и подходящие инструменты</li>
+			<li>Подготовить продукт</li>
+			<li>Проанализировать процессы в команде</li>
+			<li class="next">Немножко покодить :)</li>
+		</ul>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Благодарю за внимание!</h2>
