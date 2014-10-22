@@ -39,19 +39,33 @@
 		<p>Тестировщик в командах Web API и Continuous Delivery.<br>Занимаюсь внедрением Continuous Integration и Continuous Delivery.</p>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Цель</h2>
-		<p>Всегда должен быть рабочий код.</p>
-	</div></section>
-	<section class="slide"><div>
 		<h2>Проблемы</h2>
 		<ul>
-			<li>Выпуск новой задачи с дефектами</li>
-			<li>Дефекты в продукте из-за новой задачи</li>
-			<li>Неожиданности под нагрузкой, на боевом окружении</li>
+			<li class="next">Выпуск новой задачи с багами</li>
+			<li class="next">Негативное влияние новой задачи на другие компоненты</li>
+			<li class="next">Неожиданности под нагрузкой или на боевом окружении</li>
 		</ul>
 	</div></section>
-	<section class="slide shout"><div>
-		<h2>Продукт<br>не стабилен</h2>
+	<section class="slide"><div>
+		<h2>Последствия</h2>
+		<ul>
+			<li>Повторный цикл выпуска задачи</li>
+			<li>Негативные фидбеки</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Почему?</h2>
+		<ul>
+			<li>Не проверили задачу</li>
+			<li>Не проверили продукт целиком</li>
+			<li>Не проверили на предбоевом контуре</li>
+			<li>Не проверили производительность</li>
+			<li>Торопились [ хотфиксить ]</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Цель</h2>
+		<p>Выявлять проблемы на этапе разработки задачи и интеграции.</p>
 	</div></section>
 	<section class="slide"><div>
 		<figure>
@@ -62,119 +76,124 @@
 		</figure>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Continuous Integration</h2>
+		<h2>Ключевые моменты в CI</h2>
 		<ul>
-			<li>Автоматизированное разворачивание</li>
-			<li>Автотесты</li>
-			<li>Быстрое выполнение (до 10 минут)</li>
+			<li>Наличие автотестов</li>
+			<li>Автоматизированное разворачивание приложений и тестов</li>
+			<li>Быстрое выполнение интеграционной сборки (до 10 минут)</li>
 			<li>Тестирование на production-like окружении</li>
 			<li>Работоспособность мастер-ветки и системы в приоритете</li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Continuous Integration & Delivery</h2>
-		<pre>
-			<code><mark>VCS</mark> -&gt; <mark>Deploy</mark> -&gt; <mark>Tests</mark> -&gt; <mark>[ Merge ]</mark> -&gt; <mark>[ Update ]</mark>
-<mark class="comment">&lt;-------------  Continuous Integration  -------------&gt;</mark>
-
-<mark>VCS</mark> -&gt; <mark>RC</mark> -&gt; <mark class="important">CI</mark> -&gt; <mark>Staging</mark> -&gt; <mark>Performance</mark> -&gt; <mark>Release</mark>
-<mark class="comment">&lt;----------------  Continuous Delivery  -----------------&gt;</mark>
-			</code>
-		</pre>
-	</div></section>
-	<section class="slide" id="cd"><div>
-		<h2>Continuous Delivery или волшебная кнопка для релизов по запросу</h2>
-		<p>Денис Яковлев, 2GIS</p>
-		<p>Тезисы: <a href="http://www.highload.ru/2014/abstracts/1605.html">highload.ru/2014/abstracts/1605.html</a></p>
-		<style>
-			#cd div p {
-				margin-top: 100px;
-			}
-		</style>
+		<h2>Continuous Integration в 2GIS Web API</h2>
 	</div></section>
 	<section class="slide"><div>
 		<h2>2GIS Web API</h2>
 		<ul>
+			<li>Версии 1.3 и 2.0</li>
 			<li>7 приложений + Core на Yii Framework (PHP)</li>
-			<li>Версии 1.3 и 2.0</li>
-			<li>Конфигурирование и разворачивание с помощью Phing и Chef</li>
+			<li>Деплой приложений с помощью Phing и Chef</li>
+			<li>Функциональные и юнит-тесты на 2GIS Framework (PHP)</li>
+			<li>Деплой тестов с помощью Chef</li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Автотесты</h2>
-		<ul>
-			<li>Версии 1.3 и 2.0</li>
-			<li>Юнит-тесты</li>
-			<li>Функциональные тесты на 2GIS Framework (PHP)</li>
-			<li>Конфигурирование и разворачивание с помощью Chef</li>
-		</ul>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Рабочий код</h2>
-		<p>Это какой?</p>
-	</div></section>
-	<section class="slide cover" id="cat-worker"><div>
-		<img src="pictures/cat-worker.jpg">
-		<style>
-			#cat-worker img {
-				width: 100%;
-			}
-		</style>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Рабочий код</h2>
-		<ul>
-			<li>Без дефектов</li>
-			<li class="next">Рабочий под нагрузкой</li>
-		</ul>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Код без дефектов</h2>
-		<ol>Инструменты:
+		<h2>Что нужно?</h2>
+		<ol>
+			<li>CI-сервер</li>
 			<li>Интеграционная сборка</li>
 			<li>Регрессионная сборка</li>
+			<li>Нагрузочная сборка</li>
 		</ol>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Git Flow</h2>
+		<h2>CI-сервер</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Задачи CI-сервера</h2>
 		<ul>
-			<li>Разрабатываем все задачи и тесты в ветке</li>
-			<li>Стабильная мастер-ветка</li>
+			<li>Получение исходного кода</li>
+			<li>Сборка проектов</li>
+			<li>Выполнение тестов</li>
+			<li>Формирование отчетов</li>
 		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Решения CI-серверов</h2>
+		<ul>
+			<li>Atlassian Bamboo</li>
+			<li>Jenkins</li>
+			<li>JetBrains TeamCity</li>
+			<li>GitLab</li>
+			<li>Travis</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Выбор CI-сервера</h2>
+		<ul>Jenkins:
+			<li>Open Source</li>
+			<li>Бесплатно</li>
+			<li>Различные плагины</li>
+			<li class="next">Просто уже был настроен</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<ol>
+			<li><b>CI-сервер</b></li>
+			<li>Интеграционная сборка</li>
+			<li>Регрессионная сборка</li>
+			<li>Нагрузочная сборка</li>
+		</ol>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Интеграционная сборка</h2>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Цель</h2>
-		<p>Новая функциональность реализована без дефектов.</p>
+		<h2>Цель интеграционной сборки</h2>
+		<p>Проверить, что задача сделана без багов.</p>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Этапы</h2>
+		<h2>Git Flow</h2>
+		<ul>
+			<li>Все новые задачи и тесты в отдельной ветке</li>
+			<li>Общая ветка разработки</li>
+			<li>Стабильная мастер-ветка</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Этапы интеграционной сборки</h2>
 		<ol>
-			<li>Обновление окружения</li>
-			<li>Выполнение приоритетных тестов</li>
+			<li>Деплой окружения, приложений и тестов</li>
+			<li>Выполнение тестов</li>
 			<li>Слияние веток</li>
 			<li class="next">Отметка тикетов в JIRA</li>
 		</ol>
 	</div></section>
+	<!--<section class="slide"><div>-->
+		<!--<h2>Обновление окружения</h2>-->
+		<!--<pre>-->
+			<!--<code>def update(issue, ...):-->
+  <!--if hostname is not None and username is not None:-->
+    <!--env.host_string = '%s@%s' % (username, hostname)-->
+    <!--updater = WebAPICodeUpdated(issue, remote_mode=True)-->
+  <!--else:-->
+    <!--updater = WebAPICodeUpdated(issue, remote_mode=False)-->
+			<!--</code>-->
+		<!--</pre>-->
+	<!--</div></section>-->
 	<section class="slide"><div>
-		<h2>Обновление окружения</h2>
-		<pre>
-			<code>def update(issue, ...):
-  if hostname is not None and username is not None:
-    env.host_string = '%s@%s' % (username, hostname)
-    updater = WebAPICodeUpdated(issue, remote_mode=True)
-  else:
-    updater = WebAPICodeUpdated(issue, remote_mode=False)
-			</code>
-		</pre>
+		<h2>Деплой окружения и приложений</h2>
+		<ul>
+			<li>Мелкие правки с помощью Phing (только приложения)</li>
+			<li>Большие правки с помощью Chef (приложения + окружение)</li>
+		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Обновление окружения</h2>
+		<h2>Пример (Python)</h2>
 		<pre>
-			<code>def update(issue, ...):
-  if full_mode == 'yes':
+			<code>def update(<mark>issue</mark>, ...):
+  if <mark>full_mode == 'yes'</mark>:
     updater.update()
   else:
     updater.fast_update()
@@ -182,7 +201,24 @@
 		</pre>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Параллельное выполнение с помощью Paratest</h2>
+		<h2>Выполнение тестов</h2>
+		<ol>
+			<li>Юнит-тесты</li>
+			<li>Приоритетные функциональные тесты</li>
+		</ol>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>10 минут</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>ParaTest</h2>
+		<p>
+			<a href="https://github.com/brianium/paratest">github.com/brianium/paratest</a><br>
+			Поддержка параллельного тестирования.
+		</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Пример</h2>
 		<pre>
 			<code>$ paratest <mark>-p 8</mark> <mark class="important">-f</mark> \
 	--phpunit ./phpunit \
@@ -190,14 +226,51 @@
 	./tests</code>
 		</pre>
 	</div></section>
-	<section class="slide"><div>
-		<h2>Вливание задачи и тестов в мастер</h2>
+	<section class="slide shout"><div>
+		<h2>1 минута<br>(16 ядер)</h2>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Интеграция с JIRA</h2>
+		<ul>
+			<li>Комментарий к задаче об автоматическом мерже</li>
+			<li>Метка у задачи с веткой master</li>
+		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Время сборки 1&ndash;2 минуты</h2>
+		<h2>JIRA REST API Client</h2>
+		<p>
+			<a href="https://github.com/chobie/jira-api-restclient">github.com/chobie/jira-api-restclient</a><br>
+			PHP API-клиент для JIRA.
+		</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Пример (PHP)</h2>
+		<pre>
+			<code>$client-><mark>addComment</mark>($jiraIssue, $jiraComment);
+
+$client-><mark>editIssue</mark>($jiraIssue, [
+  'fields' => ['labels' => $labels]
+]);</code>
+		</pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Итого</h2>
+		<pre>
+			<code><mark>New Branch</mark> -&gt; <mark>Deploy</mark> -&gt; <mark>Tests</mark> -&gt; <mark>Merge</mark> -&gt; <mark>Mark Issue</mark>
+<mark class="comment">&lt;-----------------  Integration Build  -----------------&gt;</mark>
+			</code>
+		</pre>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>1,5&ndash;2 минуты</h2>
+	</div></section>
+	<section class="slide"><div>
+		<ol>
+			<li><b>CI-сервер</b></li>
+			<li><b>Интеграционная сборка</b></li>
+			<li>Регрессионная сборка</li>
+			<li>Нагрузочная сборка</li>
+		</ol>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Регрессионная сборка</h2>
@@ -212,46 +285,25 @@
 	<section class="slide"><div>
 		<h2>Этапы</h2>
 		<ol>
-			<li>Обновление окружения</li>
+			<li>Деплой окружения, приложений и тестов</li>
 			<li>Выполнение всех тестов</li>
 		</ol>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Разворачивание машины в облаке</h2>
+		<h2>Итого</h2>
+		<pre>
+			<code><mark>RC</mark> -&gt; <mark>Deploy</mark> -&gt; <mark>Tests</mark> -&gt; <mark>Merge</mark> -&gt; <mark>Mark Issues</mark>
+<mark class="comment">&lt;--------------  Regression Build  --------------&gt;</mark>
+			</code>
+		</pre>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Разделение тестов и приложений на разные сервера</h2>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Одна сборка, несколько окружений</h2>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Откат к предыдущему состоянию</h2>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Обновление до свежего stable</h2>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Интеграция с JIRA</h2>
-	</div></section>
-	<section class="slide" id="defects"><div>
-		<h2>Без дефектов не бывает, поэтому устраняем на ранних этапах.</h2>
-		<!--<img src="pictures/mixing.jpg">-->
-		<!--<style>-->
-			<!--#defects div {-->
-				<!--background-color: rgba(0,0,0,0.5);-->
-			<!--}-->
-			<!--#defects h2 {-->
-				<!--color: #fff;-->
-			<!--}-->
-			<!--#defects img {-->
-				<!--height: 100%;-->
-			<!--}-->
-		<!--</style>-->
-	</div></section>
-	<section class="slide"><div>
-		<h2>Код работает под нагрузкой</h2>
-		<p>Инструмент: нагрузочная сборка.</p>
+		<ol>
+			<li><b>CI-сервер</b></li>
+			<li><b>Интеграционная сборка</b></li>
+			<li><b>Регрессионная сборка</b></li>
+			<li>Нагрузочная сборка</li>
+		</ol>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Нагрузочная сборка</h2>
@@ -331,32 +383,36 @@ if ($responseTime <= $expectedResponseTime) {
 	<section class="slide"><div>
 		<h2>Итого</h2>
 		<pre>
-			<code><mark>New Branch</mark> -&gt; <mark>Deploy</mark> -&gt; <mark>Tests</mark> -&gt; <mark>Merge</mark> -&gt; <mark>Mark Issue</mark>
-<mark class="comment">&lt;-----------------  Integration Build  -----------------&gt;</mark>
-
-<mark>RC</mark> -&gt; <mark>Deploy</mark> -&gt; <mark>Tests</mark> -&gt; <mark>Merge</mark> -&gt; <mark>Mark Issues</mark>
-<mark class="comment">&lt;--------------  Regression Build  --------------&gt;</mark>
-
-<mark>Staging</mark> -&gt; <mark>Load Testing</mark> -&gt; <mark>Reports</mark> -&gt; <mark class="important">Release</mark>
+			<code><mark>Staging</mark> -&gt; <mark>Load Testing</mark> -&gt; <mark>Reports</mark> -&gt; <mark class="important">Release</mark>
 <mark class="comment">&lt;-------  Load Testing Build  ------&gt;</mark>
 			</code>
 		</pre>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Выводы</h2>
-		<ul>Непрерывная интеграция нужна, если:
-			<li>Вы хотите как можно ранее выявлять проблемы</li>
-			<li>Вы хотите повысить качество и стабильность продукта</li>
-			<li>Вы хотите экономить время и избавиться от ручной работы</li>
+		<h2>Результат</h2>
+		<ul>
+			<li>Интеграционная и регрессионная сборки выявляют проблемы</li>
+			<li>Следим за производительностью</li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Выводы</h2>
-		<ul>Для непрерывной интеграции нужно:
-			<li>Выбрать CI-сервер и подходящие инструменты</li>
-			<li>Подготовить продукт</li>
-			<li>Проанализировать процессы в команде</li>
-		</ul>
+		<h2>Вывод</h2>
+		<p>Чтобы выявлять баги и проблемы производительности на этапе разработки мы используем Continuous Integration.</p>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>Что дальше?</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Continuous Delivery</h2>
+		<pre>
+			<code><mark class="important">CI</mark> -&gt; <mark>Staging</mark> -&gt; <mark>Performance</mark> -&gt; <mark>Release</mark>
+			</code>
+		</pre>
+	</div></section>
+	<section class="slide" id="cd"><div>
+		<h2>Continuous Delivery или волшебная кнопка для релизов по запросу</h2>
+		<p>Денис Яковлев, 2GIS</p>
+		<p>Тезисы: <a href="http://www.highload.ru/2014/abstracts/1605.html">highload.ru/2014/abstracts/1605.html</a></p>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Благодарю за внимание!</h2>
