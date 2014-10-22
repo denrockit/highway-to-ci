@@ -19,6 +19,11 @@
 	color: #00c7f7;
 }
 
+.slide {
+	background: url(../pictures/highload-background.jpg) 100% no-repeat;
+	background-size: cover;
+}
+
 .slide h2 {
 	font-family: 'Suisse Bold', sans-serif;
 }
