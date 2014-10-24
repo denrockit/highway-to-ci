@@ -21,82 +21,58 @@
 		<h1>Highway to Continuous Integration</h1>
 		<p><a href="https://dentrifonov.github.io">Denis Trifonov</a>, <a href="http://2gis.ru">2GIS</a></p>
 	</header>
-	<section class="slide cover" id="cover"><div>
+	<section class="slide"><div>
 		<h2>Highway to Continuous Integration</h2>
 		<p>Denis Trifonov, 2GIS</p>
-		<img src="pictures/highload-cover.jpg">
-		<style>
-			#cover h2, #cover p {
-				margin-left: -50px;
-			}
-			#cover img {
-				height: 100%;
-			}
-		</style>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Обо мне</h2>
-		<p>Тестировщик в командах Web API и Continuous Delivery.<br>Занимаюсь внедрением Continuous Integration и Continuous Delivery.</p>
+		<p>Тестировщик в команде Continuous Delivery, ранее в Web API.</p>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Проблемы</h2>
+		<h2><a href="http://api.2gis.ru">api.2gis.ru</a></h2>
 		<ul>
-			<li class="next">Выпуск новой задачи с багами</li>
-			<li class="next">Негативное влияние новой задачи на другие компоненты</li>
-			<li class="next">Неожиданности под нагрузкой или на боевом окружении</li>
+			<li>Справочник компаний</li>
+			<li>Геоданные</li>
+			<li>Карты</li>
+			<li>Транспорт (скоро)</li>
+			<li>Отзывы (скоро)</li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Последствия</h2>
-		<ul>
-			<li>Повторный цикл выпуска задачи</li>
-			<li>Негативные фидбеки</li>
-		</ul>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Почему?</h2>
-		<ul>
-			<li>Не проверили задачу</li>
-			<li>Не проверили продукт целиком</li>
-			<li>Не проверили на предбоевом контуре</li>
-			<li>Не проверили производительность</li>
-			<li>Торопились [ хотфиксить ]</li>
-		</ul>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Цель</h2>
-		<p>Выявлять проблемы на этапе разработки задачи и интеграции.</p>
-	</div></section>
-	<section class="slide"><div>
-		<figure>
-			<blockquote>
-				<p>Continuous Integration is a software development practice where members of a team integrate their work frequently, usually each person integrates at least daily - leading to multiple integrations per day. Each integration is verified by an automated build (including test) to detect integration errors as quickly as possible.</p>
-			</blockquote>
-			<figcaption>Martin Fowler</figcaption>
-		</figure>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Ключевые моменты в CI</h2>
-		<ul>
-			<li>Наличие автотестов</li>
-			<li>Автоматизированное разворачивание приложений и тестов</li>
-			<li>Быстрое выполнение интеграционной сборки (до 10 минут)</li>
-			<li>Тестирование на production-like окружении</li>
-			<li>Работоспособность мастер-ветки и системы в приоритете</li>
-		</ul>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Continuous Integration в 2GIS Web API</h2>
-	</div></section>
-	<section class="slide"><div>
-		<h2>2GIS Web API</h2>
+		<h2>Разработка справочного API</h2>
 		<ul>
 			<li>Версии 1.3 и 2.0</li>
 			<li>7 приложений + Core на Yii Framework (PHP)</li>
-			<li>Деплой приложений с помощью Phing и Chef</li>
 			<li>Функциональные и юнит-тесты на 2GIS Framework (PHP)</li>
-			<li>Деплой тестов с помощью Chef</li>
+			<li>Git Flow</li>
+			<li>Еженедельные релизы</li>
+			<li>20 смежных команд</li>
 		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Проблемы при разработке</h2>
+		<ul>
+			<li>Разработчики коммитят бажный код</li>
+			<li>Тестировщики не находят баги или не успевают проверить фичу</li>
+			<li>Узнаем о багах при подготовке релиза</li>
+			<li>Релиз затягивается или переносится</li>
+			<li>Узнаем о багах на бою</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Проблемы при разработке</h2>
+		<ul>
+			<li>Человеческий фактор</li>
+			<li><b>Узнаем о багах при подготовке релиза и на бою</b></li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Выход</h2>
+		<p>Выявлять баги на этапе разработки фичи и интеграции.</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Continuous Integration в 2GIS Web API</h2>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Что нужно?</h2>
@@ -152,14 +128,6 @@
 	<section class="slide"><div>
 		<h2>Цель интеграционной сборки</h2>
 		<p>Проверить, что задача сделана без багов.</p>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Git Flow</h2>
-		<ul>
-			<li>Все новые задачи и тесты в отдельной ветке</li>
-			<li>Общая ветка разработки</li>
-			<li>Стабильная мастер-ветка</li>
-		</ul>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Этапы интеграционной сборки</h2>
@@ -393,6 +361,7 @@ if ($responseTime <= $expectedResponseTime) {
 		<ul>
 			<li>Интеграционная и регрессионная сборки выявляют проблемы</li>
 			<li>Следим за производительностью</li>
+			<li>Ежедневные релизы</li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
