@@ -21,7 +21,7 @@
 		<h1>Highway to Continuous Integration</h1>
 		<p><a href="https://dentrifonov.github.io">Denis Trifonov</a>, <a href="http://2gis.ru">2GIS</a></p>
 	</header>
-	<section class="slide"><div>
+	<section class="slide cover"><div>
 		<h2>Highway to Continuous Integration</h2>
 		<p>Denis Trifonov, 2GIS</p>
 	</div></section>
@@ -44,7 +44,7 @@
 		<ul>
 			<li>Версии 1.3 и 2.0</li>
 			<li>7 приложений + Core на Yii Framework (PHP)</li>
-			<li>Функциональные и юнит-тесты на 2GIS Framework (PHP)</li>
+			<li>Функциональные и юнит-тесты</li>
 			<li>Git Flow</li>
 			<li>Еженедельные релизы</li>
 			<li>20 смежных команд</li>
@@ -61,95 +61,115 @@
 		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Проблемы при разработке</h2>
+		<h2>На что не можем повлиять</h2>
 		<ul>
-			<li>Человеческий фактор</li>
-			<li><b>Узнаем о багах при подготовке релиза и на бою</b></li>
+			<li><b>Разработчики коммитят бажный код</b></li>
+			<li><b>Тестировщики не находят баги или не успевают проверить фичу</b></li>
+			<li>Узнаем о багах при подготовке релиза</li>
+			<li>Релиз затягивается или переносится</li>
+			<li>Узнаем о багах на бою</li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Выход</h2>
-		<p>Выявлять баги на этапе разработки фичи и интеграции.</p>
+		<h2>Мы все обычные люди</h2>
+		<p>Мы не роботы, нам свойственно ошибаться.</p>
 	</div></section>
 	<section class="slide"><div>
+		<h2>На что можем повлиять</h2>
+		<ul>
+			<li>Разработчики коммитят бажный код</li>
+			<li>Тестировщики не находят баги или не успевают проверить фичу</li>
+			<li><b>Узнаем о багах при подготовке релиза</b></li>
+			<li><b>Релиз затягивается или переносится</b></li>
+			<li><b>Узнаем о багах на бою</b></li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Continuous Integration</h2>
+		<p>Не решит всех проблем разработки, но позволит выявлять баги на этапе программирования фичи и интеграции.</p>
+	</div></section>
+	<section class="slide cover"><div>
 		<h2>Continuous Integration в 2GIS Web API</h2>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Что нужно?</h2>
+		<h2>Задачи</h2>
 		<ol>
-			<li>CI-сервер</li>
-			<li>Интеграционная сборка</li>
-			<li>Регрессионная сборка</li>
-			<li>Нагрузочная сборка</li>
+			<li>Поймать функциональные баги при готовности фичи</li>
+			<li>Поймать баги под нагрузкой и с боевыми параметрами</li>
 		</ol>
 	</div></section>
-	<section class="slide"><div>
-		<h2>CI-сервер</h2>
+	<section class="slide cover"><div>
+		<h2>Задача</h2>
+		<p>Поймать функциональные баги при готовности фичи.</p>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Задачи CI-сервера</h2>
+		<h2>Что у нас есть</h2>
 		<ul>
-			<li>Получение исходного кода</li>
-			<li>Сборка проектов</li>
-			<li>Выполнение тестов</li>
-			<li>Формирование отчетов</li>
+			<li>Ветка с новой фичей</li>
+			<li>Тесты</li>
+			<li>Рецепты</li>
 		</ul>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Решения CI-серверов</h2>
-		<ul>
-			<li>Atlassian Bamboo</li>
-			<li>Jenkins</li>
-			<li>JetBrains TeamCity</li>
-			<li>GitLab</li>
-			<li>Travis</li>
-		</ul>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Выбор CI-сервера</h2>
-		<ul>Jenkins:
-			<li>Open Source</li>
-			<li>Бесплатно</li>
-			<li>Различные плагины</li>
-			<li class="next">Просто уже был настроен</li>
-		</ul>
-	</div></section>
-	<section class="slide"><div>
-		<ol>
-			<li><b>CI-сервер</b></li>
-			<li>Интеграционная сборка</li>
-			<li>Регрессионная сборка</li>
-			<li>Нагрузочная сборка</li>
-		</ol>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Интеграционная сборка</h2>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Цель интеграционной сборки</h2>
-		<p>Проверить, что задача сделана без багов.</p>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Этапы интеграционной сборки</h2>
 		<ol>
-			<li>Деплой окружения, приложений и тестов</li>
-			<li>Выполнение тестов</li>
-			<li>Слияние веток</li>
-			<li class="next">Отметка тикетов в JIRA</li>
+			<li>Развернуть новую ветку с помощью рецептов</li>
+			<li>Прогнать все тесты
+				<ul>
+					<li>Все хорошо &mdash; смержить ветку в мастер</li>
+					<li>Что-то упало &mdash; сообщить о проблеме</li>
+				</ul>
+			</li>
 		</ol>
 	</div></section>
-	<!--<section class="slide"><div>-->
-		<!--<h2>Обновление окружения</h2>-->
-		<!--<pre>-->
-			<!--<code>def update(issue, ...):-->
-  <!--if hostname is not None and username is not None:-->
-    <!--env.host_string = '%s@%s' % (username, hostname)-->
-    <!--updater = WebAPICodeUpdated(issue, remote_mode=True)-->
-  <!--else:-->
-    <!--updater = WebAPICodeUpdated(issue, remote_mode=False)-->
-			<!--</code>-->
-		<!--</pre>-->
-	<!--</div></section>-->
+	<section class="slide"><div>
+		<h2>Можно использовать, но...</h2>
+		<p>Сборка выполняется 6 часов, тесты занимают 99,9% времени.</p>
+	</div></section>
+	<section class="slide"><div>
+		<figure>
+			<blockquote>
+				<p>6 часов это много для интеграции. Сборка не успевает за разработчиками. К тому же разработчики теряют контекст задачи, переходя к другой. Нужно уложиться в 5 минут.</p>
+			</blockquote>
+			<figcaption>Тимлид Кирилл</figcaption>
+		</figure>
+	</div></section>
+	<section class="slide"><div>
+		<h2>ParaTest</h2>
+		<p>
+			<a href="https://github.com/brianium/paratest">github.com/brianium/paratest</a><br>
+			Поддержка параллельного выполнения тестов на PHPUnit.
+		</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Пример</h2>
+		<pre>
+			<code>$ paratest <mark>-p 8</mark> --phpunit ./phpunit \
+  -c ./phpunit.xml ./tests</code>
+		</pre>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>50 минут<br>(16 ядер)</h2>
+	</div></section>
+	<section class="slide"><div>
+		<figure>
+			<blockquote>
+				<p>А давайте для интеграционной сборки оставим только приоритетные тесты, которые покроют продукт в целом, а вечером будем гонять регрессию (все тесты)?</p>
+			</blockquote>
+			<figcaption>Тестировщица Настя</figcaption>
+		</figure>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>3 минуты</h2>
+	</div></section>
+	<section class="slide"><div>
+		<figure>
+			<blockquote>
+				<p>А зачем по каждому чиху полностью разворачивать окружение?</p>
+			</blockquote>
+			<figcaption>Программист Игорь</figcaption>
+		</figure>
+	</div></section>
 	<section class="slide"><div>
 		<h2>Деплой окружения и приложений</h2>
 		<ul>
@@ -164,38 +184,19 @@
   if <mark>full_mode == 'yes'</mark>:
     updater.update()
   else:
-    updater.fast_update()
-			</code>
-		</pre>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Выполнение тестов</h2>
-		<ol>
-			<li>Юнит-тесты</li>
-			<li>Приоритетные функциональные тесты</li>
-		</ol>
-	</div></section>
-	<section class="slide shout"><div>
-		<h2>10 минут</h2>
-	</div></section>
-	<section class="slide"><div>
-		<h2>ParaTest</h2>
-		<p>
-			<a href="https://github.com/brianium/paratest">github.com/brianium/paratest</a><br>
-			Поддержка параллельного тестирования.
-		</p>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Пример</h2>
-		<pre>
-			<code>$ paratest <mark>-p 8</mark> <mark class="important">-f</mark> \
-	--phpunit ./phpunit \
-	-c ./phpunit.xml \
-	./tests</code>
+    updater.fast_update()</code>
 		</pre>
 	</div></section>
 	<section class="slide shout"><div>
-		<h2>1 минута<br>(16 ядер)</h2>
+		<h2>1,5&ndash;3 минуты</h2>
+	</div></section>
+	<section class="slide"><div>
+		<figure>
+			<blockquote>
+				<p>Круто! А можно еще чтобы сборка сама как-нибудь в JIRA писала всю информацию?</p>
+			</blockquote>
+			<figcaption>Тестировщица Ира</figcaption>
+		</figure>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Интеграция с JIRA</h2>
@@ -208,7 +209,7 @@
 		<h2>JIRA REST API Client</h2>
 		<p>
 			<a href="https://github.com/chobie/jira-api-restclient">github.com/chobie/jira-api-restclient</a><br>
-			PHP API-клиент для JIRA.
+			API-клиент для JIRA на PHP.
 		</p>
 	</div></section>
 	<section class="slide"><div>
@@ -222,22 +223,23 @@ $client-><mark>editIssue</mark>($jiraIssue, [
 		</pre>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Итого</h2>
+		<h2>Интеграционная сборка в работе</h2>
 		<pre>
-			<code><mark>New Branch</mark> -&gt; <mark>Deploy</mark> -&gt; <mark>Tests</mark> -&gt; <mark>Merge</mark> -&gt; <mark>Mark Issue</mark>
-<mark class="comment">&lt;-----------------  Integration Build  -----------------&gt;</mark>
-			</code>
+			<code><mark>Feature Branch</mark>
+  -&gt; <mark>Deploy</mark> -&gt; <mark>Priority Tests</mark>
+  -&gt; <mark>Merge to Master</mark> -&gt; <mark>Mark Issue in JIRA</mark></code>
 		</pre>
 	</div></section>
-	<section class="slide shout"><div>
-		<h2>1,5&ndash;2 минуты</h2>
-	</div></section>
 	<section class="slide"><div>
+		<h2>Задачи</h2>
 		<ol>
-			<li><b>CI-сервер</b></li>
-			<li><b>Интеграционная сборка</b></li>
-			<li>Регрессионная сборка</li>
-			<li>Нагрузочная сборка</li>
+			<li>Поймать функциональные баги при готовности фичи
+				<ul>
+					<li><b>Интеграционная сборка</b></li>
+					<li>Регрессионная сборка</li>
+				</ul>
+			</li>
+			<li>Поймать баги под нагрузкой и с боевыми параметрами</li>
 		</ol>
 	</div></section>
 	<section class="slide"><div>
