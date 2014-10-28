@@ -27,12 +27,12 @@
 	</div></section>
 	<section class="slide"><div>
 		<h2>Обо мне</h2>
-		<p>Тестировщик в команде Continuous Delivery, ранее в Web API.</p>
+		<p>Тестировщик в команде Continuous Delivery, ранее в справочном API.</p>
 	</div></section>
 	<section class="slide"><div>
 		<h2><a href="http://api.2gis.ru">api.2gis.ru</a></h2>
 		<ul>
-			<li>Справочник компаний</li>
+			<li>Справочник организаций</li>
 			<li>Геоданные</li>
 			<li>Карты</li>
 			<li>Транспорт (скоро)</li>
@@ -40,27 +40,36 @@
 		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Разработка справочного API</h2>
+		<h2>Справочное API</h2>
 		<ul>
 			<li>Версии 1.3 и 2.0</li>
 			<li>7 приложений + Core на Yii Framework (PHP)</li>
 			<li>Функциональные и юнит-тесты</li>
+			<li>20 смежных команд</li>
 			<li>Git Flow</li>
 			<li>Еженедельные релизы</li>
-			<li>20 смежных команд</li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Проблемы при разработке</h2>
+		<h2>Проблемы</h2>
 		<ul>
 			<li>Разработчики коммитят бажный код</li>
 			<li>Тестировщики не находят баги или не успевают проверить фичу</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Последствия</h2>
+		<ul>
 			<li>Узнаем о багах при подготовке релиза</li>
 			<li>Релиз затягивается или переносится</li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Мы узнаем о баге спустя 5 дней</h2>
+		<h2>Мы хотим выявлять баги по мере готовности фич, а не при подготовке релиза.</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Continuous Integration</h2>
+		<p>Не решит всех проблем разработки, но позволит выявлять баги на этапе программирования фичи и ее интеграции.</p>
 	</div></section>
 	<section class="slide"><div>
 		<figure>
@@ -70,16 +79,12 @@
 			<figcaption>Martin Fowler</figcaption>
 		</figure>
 	</div></section>
-	<section class="slide"><div>
-		<h2>Continuous Integration</h2>
-		<p>Не решит всех проблем разработки, но позволит выявлять баги на этапе программирования фичи и ее интеграции.</p>
-	</div></section>
 	<section class="slide cover"><div>
-		<h2>Continuous Integration в 2GIS Web API</h2>
+		<h2>Continuous Integration</h2>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Интеграционная сборка</h2>
-		<p>Цель: проверить новую фичу и слить в мастер. Время выполнения должно быть 5&ndash;10 минут.</p>
+		<p>Время выполнения должно быть не более 5 минут.</p>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Что у нас есть</h2>
@@ -92,11 +97,11 @@
 	<section class="slide"><div>
 		<h2>Этапы интеграционной сборки</h2>
 		<ol>
-			<li>Развернуть новую ветку</li>
-			<li>Прогнать все тесты
+			<li>Деплой фичи</li>
+			<li>Выполнение тестов
 				<ul>
-					<li>Все хорошо &mdash; смержить ветку в мастер</li>
-					<li>Что-то упало &mdash; сообщить о проблеме</li>
+					<li>Когда все хорошо сливаем фичу в мастер</li>
+					<li>Когда что-то упало сообщаем о проблеме</li>
 				</ul>
 			</li>
 		</ol>
@@ -104,8 +109,8 @@
 	<section class="slide"><div>
 		<h2>Сборка выполняется за 6 часов</h2>
 		<ul>
-			<li>Деплой за 5 минут</li>
-			<li>Выполнение тестов за 5 часов 55 минут</li>
+			<li>Деплой за 3 минуты</li>
+			<li>Тесты за 5 часов 57 минут</li>
 		</ul>
 	</div></section>
 	<section class="slide shout"><div>
@@ -116,7 +121,7 @@
 		<ul>
 			<li>Максимальное время выполнения одного теста 2 минуты</li>
 			<li>Среднее время выполнения одного теста 1,5 секунды</li>
-			<li><b>Используется одно ядро (из 16) процессора при запуске PHPUnit</b></li>
+			<li><b>PHPUnit использует одно ядро (из 16) процессора</b></li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
@@ -144,18 +149,19 @@
 		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Потери на этапе интеграции</h2>
+		<h2>Исключаем тесты</h2>
 		<ul>
-			<li>Оставляем только приоритетные тесты (1500 тестов)</li>
+			<li>Оставляем только приоритетные тесты</li>
 			<li>Оставляем только формат JSON (убрали JSONP и XML)</li>
 		</ul>
+		<p>Итого: 1500 тестов</p>
 	</div></section>
 	<section class="slide shout"><div>
 		<h2>5 минут</h2>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Еще быстрее?</h2>
-		<p>Переразворачивать полностью окружение избыточно когда правки только в приложении.</p>
+		<p>Если не было изменений в окружении, то достаточно обновить только приложения.</p>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Деплой окружения и приложений</h2>
@@ -164,28 +170,18 @@
 			<li>Большие правки с помощью Chef (приложения + окружение)</li>
 		</ul>
 	</div></section>
-	<section class="slide"><div>
-		<h2>Пример (Python)</h2>
-		<pre>
-			<code>def update(<mark>issue</mark>, ...):
-  if <mark>full_mode == 'yes'</mark>:
-    updater.update() <mark class="comment">// Chef</mark>
-  else:
-    updater.fast_update() <mark class="comment">// Phing</mark></code>
-		</pre>
-	</div></section>
 	<section class="slide shout"><div>
 		<h2>3 минуты</h2>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Боль</h2>
-		<p>У нас автоматизированы тестирование и мерж фичи, а в JIRA по-прежнему пишем сами о результатах сборки.</p>
+		<h2>Лень побеждает</h2>
+		<p>У нас есть автоматизированная сборка, но после нее приходится самому писать в JIRA о смене статуса фичи.</p>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Интеграция с JIRA</h2>
 		<ul>
-			<li>Комментарий в тикете об автоматическом мерже</li>
-			<li>Метка у тикета с веткой master</li>
+			<li>Комментарий в тикете об автоматическом мерже веток</li>
+			<li>Метка у тикета при попадании в мастер</li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
@@ -214,20 +210,20 @@ $client-><mark>editIssue</mark>($jiraIssue, [
 	</div></section>
 	<section class="slide"><div>
 		<h2>Профит</h2>
-		<p>Быстрое решение об интеграции новой фичи и выявление критичных багов.</p>
+		<p>Разработчик спустя три минуты после готовности фичи может слить ее в мастер.</p>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Но...</h2>
-		<p>Мы все также ищем баги при подготовке релиза.</p>
-	</div></section>
-	<section class="slide cover"><div>
-		<h2>Регрессионная сборка</h2>
+		<p>Мы все также не уверены в мастере.</p>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Регрессионная сборка</h2>
 		<pre>
 			<code><mark>Master Branch</mark> -&gt; <mark>Deploy</mark> -&gt; <mark class="important">Full Tests</mark></code>
 		</pre>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Запускаем регрессионную сборку каждый вечер</h2>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Регрессия перед релизом</h2>
@@ -238,7 +234,7 @@ $client-><mark>editIssue</mark>($jiraIssue, [
 	</div></section>
 	<section class="slide"><div>
 		<h2>Профит</h2>
-		<p>Мастер без багов и готовность релизиться.</p>
+		<p>Мы готовим релиз один день вместо четырех.</p>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Как так?!</h2>
@@ -246,33 +242,21 @@ $client-><mark>editIssue</mark>($jiraIssue, [
 	</div></section>
 	<section class="slide"><div>
 		<h2>Задача</h2>
-		<p>Нужно перед регрессией полностью восстанавливать исходное состояние окружения.</p>
+		<p>Перед регрессией нужно полностью восстанавливать исходное состояние окружения.</p>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Куда поместить окружение</h2>
 		<ul>
 			<li>Virtual Box</li>
 			<li><b>Open Stack</b></li>
-			<li>VMware</li>
 			<li>Docker</li>
-			<li>Другие</li>
+			<li>Другие технологии контейнеризации и виртуализации</li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Разворачивание Open Stack</h2>
+		<h2>Архитектура в Open Stack</h2>
 		<ul>
-			<li>Установить на железные ноды</li>
-			<li>Минимально сконфигурировать (Controller + Compute)</li>
-			<li>Написать шаблоны для деплоя сервисов</li>
-		</ul>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Пример шаблона</h2>
-	</div></section>
-	<section class="slide"><div>
-		<h2>Готовое приватное облако</h2>
-		<ul>
-			<li>WebAPI-нода</li>
+			<li>API-нода</li>
 			<li>Нода с тестами</li>
 			<li>Любая нода по требованию за 1 минуту</li>
 		</ul>
@@ -285,48 +269,49 @@ $client-><mark>editIssue</mark>($jiraIssue, [
 	</div></section>
 	<section class="slide"><div>
 		<h2>Профит</h2>
-		<p>Обновляем также как на бою: накатываем на последний stable.</p>
+		<p>Во время регрессии деплоим также как на бою.</p>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Понедельник день тяжелый</h2>
 		<p>Вышел новый сотрудник, начал настраивать рабочее окружение и вылетели ошибки во время разворачивания API.</p>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Сборка с нуля</h2>
+		<h2>Сборка деплоя с нуля</h2>
 		<pre>
 			<code><mark>VM Up</mark> -&gt; <mark>Deploy</mark> -&gt; <mark>Import Data</mark> -&gt; <mark>Tests</mark> -&gt; <mark>VM Destroy</mark></code>
 		</pre>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Профит</h2>
-		<p>В любое время продукт развернется без ошибок.</p>
+		<p>Мы уверены что в любое время можем развернуть API без ошибок.</p>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Итого</h2>
 		<ol>
 			<li>Интеграционная сборка</li>
 			<li>Регрессионная сборка</li>
-			<li>Сборка с нуля</li>
+			<li>Сборка деплоя с нуля</li>
 		</ol>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Итого</h2>
-		<p>Выявляем баги не при подготовке релиза, а по готовности фичи.</p>
+		<p>Выявляем баги не при подготовке релиза, а по мере готовности фич.</p>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Результат</h2>
 		<ul>
 			<li>Сборки падают, а значит выполняют свои задачи</li>
-			<li>Время обнаружения проблемы от 3 минут</li>
-			<li><b>Релизы чаще</b></li>
+			<li>Мы находим проблемы спустя три минуты вместо четырех дней</li>
+			<li>Мы готовим релиз один день вместо четырех</li>
+			<li><b>Релизы чаще и по требованию</b></li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Вывод</h2>
 		<p>Continuous Integration помогает выявлять баги на этапе программирования фичи и ее интеграции.</p>
 	</div></section>
-	<section class="slide shout"><div>
-		<h2>CI это весело!</h2>
+	<section class="slide"><div>
+		<h2>Continuous Integration &mdash; разработка без ограничений.</h2>
 	</div></section>
 	<section class="slide shout"><div>
 		<h2>Что дальше?</h2>
