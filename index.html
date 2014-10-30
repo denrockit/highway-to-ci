@@ -21,13 +21,49 @@
 		<h1>Highway to Continuous Integration</h1>
 		<p><a href="https://dentrifonov.github.io">Denis Trifonov</a>, <a href="http://2gis.ru">2GIS</a></p>
 	</header>
-	<section class="slide cover"><div>
-		<h2>Highway to Continuous Integration</h2>
-		<p>Denis Trifonov, 2GIS</p>
+	<section class="slide cover" id="title"><div>
+		<h2>Highway to<br>Continuous Integration</h2>
+		<p>Денис Трифонов</p>
+		<div><span></span><img src="pictures/highway-icon.svg" alt="Highway Icon"></div>
+		<img src="pictures/2gis-cover.png" alt="2GIS Logo">
+		<style>
+			#title h2 {
+				position: relative;
+				top: 200px;
+				left: 40px;
+			}
+			#title p {
+				position: relative;
+				top: 200px;
+				left: 40px;
+				font-size: 32px;
+			}
+			#title div div {
+				width: 250px;
+				height: 250px;
+				position: relative;
+				top: -120px;
+				left: 550px;
+				background: #A6CE38;
+				border-radius: 50%;
+				white-space: nowrap;
+				text-align: center;
+			}
+			#title div div span {
+				display: inline-block;
+				height: 100%;
+				vertical-align: middle;
+			}
+			#title div div img {
+				z-index: auto;
+				vertical-align: middle;
+				position: static;
+			}
+		</style>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Обо мне</h2>
-		<p>Тестировщик в команде Continuous Delivery, ранее в справочном API.</p>
+		<p>Инженер по качеству в команде Continuous Delivery.</p>
 	</div></section>
 	<section class="slide"><div>
 		<h2><a href="http://api.2gis.ru">api.2gis.ru</a></h2>
@@ -45,9 +81,8 @@
 			<li>Версии 1.3 и 2.0</li>
 			<li>7 приложений + Core на Yii Framework (PHP)</li>
 			<li>Функциональные и юнит-тесты</li>
-			<li>20 смежных команд</li>
 			<li>Git Flow</li>
-			<li>Еженедельные релизы</li>
+			<li>20 смежных команд</li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
@@ -60,12 +95,21 @@
 	<section class="slide"><div>
 		<h2>Последствия</h2>
 		<ul>
-			<li>Узнаем о багах при подготовке релиза</li>
+			<li>Узнаем о багах при подготовке к релизу</li>
 			<li>Релиз затягивается или переносится</li>
 		</ul>
 	</div></section>
-	<section class="slide"><div>
-		<h2>Мы хотим выявлять баги по мере готовности фич, а не при подготовке релиза.</h2>
+	<section class="slide shout" id="objective"><div>
+		<h2>&bdquo;Мы хотим выявлять баги по мере готовности фич, а не при подготовке к релизу&ldquo;</h2>
+		<style>
+			#objective div {
+				background-color: #00b2dd;
+			}
+			#objective h2 {
+				font-size: 300%;
+				color: #fff;
+			}
+		</style>
 	</div></section>
 	<section class="slide"><div>
 		<figure>
@@ -76,15 +120,48 @@
 		</figure>
 	</div></section>
 	<section class="slide"><div>
-		<h2>Continuous Integration</h2>
-		<p>Не решит всех проблем разработки, но позволит выявлять баги на этапе программирования фичи и ее интеграции.</p>
+		<h2>Continuous Integration &mdash;</h2>
+		<p>не решит всех проблем разработки, но позволит выявлять баги на этапе программирования фичи.</p>
 	</div></section>
-	<section class="slide cover"><div>
+	<section class="slide shout" id="ci"><div>
 		<h2>Continuous Integration</h2>
+		<style>
+			#ci h2 {
+				color: #fff;
+				background-color: #00b2dd;
+				width: 800px;
+				height: 550px;
+				border-radius: 50%;
+				vertical-align: middle;
+				padding-top: 250px;
+				margin-left: 100px;
+			}
+		</style>
 	</div></section>
-	<section class="slide"><div>
-		<h2>Интеграционная сборка</h2>
-		<p>Время выполнения должно быть не более 5 минут.</p>
+	<section class="slide shout" id="integration-build"><div>
+		<h2>Интеграционная<br>сборка</h2>
+		<div><h2>&le; <span class="integer">5</span> min</h2></div>
+		<style>
+			#integration-build div h2 {
+				background-color: rgba(249, 236, 0, 0.85);
+				width: 750px;
+				height: 475px;
+				border-radius: 50%;
+				vertical-align: middle;
+				padding-top: 275px;
+				margin-left: -100px;
+				font-size: 72px;
+			}
+			#integration-build div div h2 {
+				background-color: rgba(166, 206, 56, 0.85);
+				width: 600px;
+				height: 350px;
+				border-radius: 50%;
+				vertical-align: middle;
+				padding-top: 250px;
+				margin-left: 500px;
+			}
+		</style>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Что у нас есть</h2>
@@ -106,15 +183,34 @@
 			</li>
 		</ol>
 	</div></section>
+	<section class="slide shout" id="first-build"><div>
+		<h2><span class="integer">6</span> часов</h2>
+		<style>
+			#first-build div {
+				background-color: #e77c4f;
+			}
+			#first-build h2 {
+				color: #fff;
+			}
+		</style>
+	</div></section>
+	<section class="slide cover"><div>
+		<img src="pictures/zvezdets.jpg" width="1024px" alt="Zvezdets">
+	</div></section>
 	<section class="slide"><div>
-		<h2>Сборка выполняется за 6 часов</h2>
+		<h2>Время этапов сборки</h2>
 		<ul>
 			<li>Деплой за 3 минуты</li>
 			<li>Тесты за 5 часов 57 минут</li>
 		</ul>
 	</div></section>
-	<section class="slide shout"><div>
-		<h2>12 000 тестов</h2>
+	<section class="slide shout" id="tests"><div>
+		<h2><span class="integer">12 000</span> тестов</h2>
+		<style>
+			#tests div {
+				background-color: #f9ec00;
+			}
+		</style>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Анализ выполнения тестов</h2>
@@ -138,8 +234,16 @@
   -c ./phpunit.xml ./tests</code>
 		</pre>
 	</div></section>
-	<section class="slide shout"><div>
-		<h2>50 минут</h2>
+	<section class="slide shout" id="paratest"><div>
+		<h2><span class="integer">50</span> минут</h2>
+		<style>
+			#paratest div {
+				background-color: #e77c4f;
+			}
+			#paratest h2 {
+				color: #fff;
+			}
+		</style>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Ищем компромисс</h2>
@@ -154,10 +258,18 @@
 			<li>Оставляем только приоритетные тесты</li>
 			<li>Оставляем только формат JSON (убрали JSONP и XML)</li>
 		</ul>
-		<p>Итого: 1500 тестов</p>
+		<p>Итого: <strong>1500</strong> тестов</p>
 	</div></section>
-	<section class="slide shout"><div>
-		<h2>5 минут</h2>
+	<section class="slide shout" id="priority-tests"><div>
+		<h2><span class="integer">5</span> минут</h2>
+		<style>
+			#priority-tests div {
+				background-color: #a6ce38;
+			}
+			#priority-tests h2 {
+				color: #fff;
+			}
+		</style>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Еще быстрее?</h2>
@@ -170,8 +282,16 @@
 			<li>Большие правки с помощью Chef (приложения + окружение)</li>
 		</ul>
 	</div></section>
-	<section class="slide shout"><div>
-		<h2>3 минуты</h2>
+	<section class="slide shout" id="deploy"><div>
+		<h2><span class="integer">3</span> минуты</h2>
+		<style>
+			#deploy div {
+				background-color: #00b2dd;
+			}
+			#deploy h2 {
+				color: #fff;
+			}
+		</style>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Лень побеждает</h2>
@@ -205,12 +325,15 @@ $client-><mark>editIssue</mark>($jiraIssue, [
 		<h2>Интеграционная сборка в работе</h2>
 		<pre>
 			<code><mark>Feature Branch</mark> -&gt; <mark>Deploy</mark> -&gt; <mark>Priority Tests</mark>
-  -&gt; <mark>Merge to Master</mark> -&gt; <mark>Mark Issue in JIRA</mark></code>
+  -&gt; <mark class="success">Merge to Master</mark> -&gt; <mark class="success">Mark Issue in JIRA</mark></code>
 		</pre>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Профит</h2>
 		<p>Разработчик спустя три минуты после готовности фичи может слить ее в мастер.</p>
+	</div></section>
+	<section class="slide cover"><div>
+		<img src="pictures/limit-40.jpg" alt="Limit 40">
 	</div></section>
 	<section class="slide"><div>
 		<h2>Но...</h2>
@@ -219,22 +342,39 @@ $client-><mark>editIssue</mark>($jiraIssue, [
 	<section class="slide"><div>
 		<h2>Регрессионная сборка</h2>
 		<pre>
-			<code><mark>Master Branch</mark> -&gt; <mark>Deploy</mark> -&gt; <mark class="important">Full Tests</mark></code>
+			<code><mark>Master Branch</mark> -&gt; <mark>Deploy</mark> -&gt; <mark><strong>Full Tests</strong></mark></code>
 		</pre>
 	</div></section>
-	<section class="slide"><div>
-		<h2>Запускаем регрессионную сборку каждый вечер</h2>
+	<section class="slide shout" id="regression-build"><div>
+		<h2>Запускаем регрессионную сборку <span>каждый вечер</span></h2>
+		<style>
+			#regression-build div {
+				background-color: #a6ce38;
+			}
+			#regression-build h2 {
+				font-size: 72px;
+			}
+			#regression-build h2 span {
+				color: #fff;
+			}
+		</style>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Регрессия перед релизом</h2>
 		<pre>
-			<code><mark>Master Branch</mark> -&gt; <mark class="important">RC</mark> -&gt; <mark>Deploy</mark> -&gt; <mark>Full Tests</mark>
-  -&gt; <mark class="important">Merge to Stable</mark> -&gt; <mark class="important">Mark Issues in JIRA</mark></code>
+			<code><mark>Master Branch</mark> -&gt; <mark><strong>RC</strong></mark> -&gt; <mark>Deploy</mark> -&gt; <mark>Full Tests</mark>
+  -&gt; <mark class="success"><strong>Merge to Stable</strong></mark> -&gt; <mark class="success"><strong>Mark Issues in JIRA</strong></mark></code>
 		</pre>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Профит</h2>
-		<p>Мы готовим релиз один день вместо четырех.</p>
+		<p>Мастер становится стабильным спустя один день вместо пяти.</p>
+	</div></section>
+	<section class="slide cover"><div>
+		<img src="pictures/limit-120.jpeg" width="1024" alt="Limit 40">
+	</div></section>
+	<section class="slide cover"><div>
+		<img src="pictures/fun-live.jpg" width="1024" alt="Fun Live">
 	</div></section>
 	<section class="slide"><div>
 		<h2>Как так?!</h2>
@@ -264,7 +404,7 @@ $client-><mark>editIssue</mark>($jiraIssue, [
 	<section class="slide"><div>
 		<h2>Обновленная регрессия</h2>
 		<pre>
-			<code><mark>...</mark> -&gt; <mark class="important">Revert VM</mark> -&gt; <mark>Deploy</mark> -&gt; <mark>...</mark> -&gt; <mark class="important">Update Snapshot</mark></code>
+			<code><mark>...</mark> -&gt; <mark><strong>Revert VM</strong></mark> -&gt; <mark>Deploy</mark> -&gt; <mark>...</mark> -&gt; <mark class="success"><strong>Update Snapshot</strong></mark></code>
 		</pre>
 	</div></section>
 	<section class="slide"><div>
@@ -283,7 +423,7 @@ $client-><mark>editIssue</mark>($jiraIssue, [
 	</div></section>
 	<section class="slide"><div>
 		<h2>Профит</h2>
-		<p>Мы уверены что в любое время можем развернуть API без ошибок.</p>
+		<p>Мы уверены, что в любое время можем развернуть API без ошибок.</p>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Итого</h2>
@@ -300,17 +440,24 @@ $client-><mark>editIssue</mark>($jiraIssue, [
 	<section class="slide"><div>
 		<h2>Результат</h2>
 		<ul>
-			<li>Мы находим проблемы спустя три минуты вместо четырех дней</li>
-			<li>Мы готовим релиз один день вместо четырех</li>
-			<li><b>Релизы чаще и по требованию</b></li>
+			<li>Мы находим проблемы спустя три минуты вместо пяти дней</li>
+			<li>Мастер становится стабильным спустя один день вместо пяти</li>
 		</ul>
 	</div></section>
 	<section class="slide"><div>
 		<h2>Вывод</h2>
-		<p>Continuous Integration помогает выявлять баги на этапе программирования фичи и ее интеграции.</p>
+		<p>Continuous Integration помогает выявлять баги на этапе программирования фичи.</p>
 	</div></section>
-	<section class="slide"><div>
-		<h2>Continuous Integration &mdash; разработка без скоростных ограничений.</h2>
+	<section class="slide cover" id="bugatti"><div>
+		<h2>Continuous Integration &mdash;<br>разработка без скоростных ограничений.</h2>
+		<img src="pictures/bugatti-veyron.jpg" alt="Bugatti Veyron">
+		<style>
+			#bugatti h2 {
+				position: absolute;
+				top: 450px;
+				color: #000;
+			}
+		</style>
 	</div></section>
 	<section class="slide shout"><div>
 		<h2>Что дальше?</h2>
@@ -318,17 +465,67 @@ $client-><mark>editIssue</mark>($jiraIssue, [
 	<section class="slide"><div>
 		<h2>Continuous Delivery</h2>
 		<pre>
-			<code><mark class="important">CI</mark> -&gt; <mark>Staging</mark> -&gt; <mark>Load Testing</mark> -&gt; <mark>Release</mark>
+			<code><mark class="success">CI</mark> -&gt; <mark>Staging</mark> -&gt; <mark>Load Testing</mark> -&gt; <mark>Release</mark>
 			</code>
 		</pre>
 	</div></section>
-	<section class="slide"><div>
-		<h2>Благодарю за внимание!</h2>
+	<section class="slide cover"><div>
+		<img src="pictures/end.jpg" alt="The End">
+	</div></section>
+	<section class="slide cover" id="contacts"><div>
+		<h2>Денис Трифонов</h2>
 		<p>
-			Денис Трифонов, Специалист по тестированию ПО, 2GIS<br>
+			<img src="pictures/email-icon.svg" alt="EMail Icon">
 			de.trifonov@2gis.ru<br>
+			<img src="pictures/globe-icon.svg" alt="Globe Icon">
 			<a href="https://dentrifonov.github.io">dentrifonov.github.io</a>
 		</p>
+		<div><span></span><h2>Спасибо!</h2></div>
+		<img src="pictures/2gis-cover.png" alt="2GIS Logo">
+		<style>
+			#contacts h2 {
+				position: relative;
+				top: 200px;
+				left: 40px;
+			}
+			#contacts p {
+				position: relative;
+				top: 200px;
+				left: 40px;
+				font-size: 32px;
+			}
+			#contacts p img {
+				z-index: auto;
+				vertical-align: middle;
+				position: static;
+				margin-right: 50px;
+			}
+			#contacts div div {
+				width: 250px;
+				height: 250px;
+				position: relative;
+				top: -120px;
+				left: 550px;
+				background: #00b2dd;
+				border-radius: 50%;
+				white-space: nowrap;
+				text-align: center;
+				vertical-align: middle;
+			}
+			#contacts div div span {
+				display: inline-block;
+				height: 100%;
+				vertical-align: middle;
+			}
+			#contacts div div h2 {
+				z-index: auto;
+				vertical-align: middle;
+				position: static;
+				display: inline-block;
+				margin-bottom: 0;
+				color: #fff;
+			}
+		</style>
 	</div></section>
 	<div class="progress"><div></div></div>
 	<script src="node_modules/shower-core/shower.min.js"></script>
